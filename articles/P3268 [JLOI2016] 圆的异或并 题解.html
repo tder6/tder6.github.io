@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>P3268 [JLOI2016] 圆的异或并 题解 - tder の blogs (*/ω＼*)</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn.luogu.com.cn/upload/usericon/714254.png" />
+</head>
+
+<body>
+    <div class="whole"></div>
+    <div class="headline">
+        <a href="/main.html">
+            <div class="title">
+                <strong style="margin-right: 10px;">tder の blogs</strong>(*/ω＼*)
+            </div>
+        </a>
+        <div class="user">
+            <a href="https://www.luogu.com.cn/user/714254">
+                <img class="profile" src="https://cdn.luogu.com.cn/upload/usericon/714254.png"></img>
+            </a>
+        </div>
+    </div>
+    <div class="empty"></div>
+    <div class="body">
+        <div class="menu" style="height: 965px;">
+            <div class="text">
+                <strong>Menu</strong>
+            </div>
+            <div class="object flex">
+                <a href="/menu/sol.html">
+                    <strong>「Sol」</strong>
+                </a>
+            </div>
+        </div>
+        <div class="article" style="height: 965px;">
+            <div class="text">
+                <strong class="name">P3268 [JLOI2016] 圆的异或并 题解</strong>
+                <div class="info">
+                    <div class="tag">
+                        under
+                        <div class="item">
+                            <a href="/menu/sol.html">「Sol」</a>
+                        </div>
+                    </div>
+                    <div class="time">
+                        posted on
+                        <div class="item">&nbsp;2024/03/26</div>
+                    </div>
+                </div>
+            </div>
+            <div class="object">
+                <p>大计几利好难 /kel</p>
+                <p>机房有大佬发挥人类智慧随机旋转 A 了 /jk</p>
+                <p>考虑建树（森林），表示圆之间的关系。父亲表示内含，兄弟表示相离但拥有同一父亲。</p>
+                <p>将每个圆分为上半圆和下半圆两部分，与<a href='https://www.luogu.com.cn/problem/P5490' class="link">扫描线</a>相似，具有函数值大小关系不变的性质。特别的，若一个上半圆的上方距离最近的为上半圆，则显然为其父亲；若其上方距离最近的为下半圆，则为其兄弟。</p>
+                <p>此处参考扫描线用堆维护即可。</p>
+                <p><img src="https://cdn.luogu.com.cn/upload/image_hosting/dyakxmda.png" referrerpolicy="no-referrer">
+                </p>
+                <p>例如，将上图通过上述方式建树后形成的森林应为：</p>
+                <p><img src="https://cdn.luogu.com.cn/upload/image_hosting/ko5u2du8.png" referrerpolicy="no-referrer">
+                </p>
+                <p>令一个点的深度为 <span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="1.215ex" height="1.994ex"
+                            viewBox="0 -755.9 523 858.4" role="img" focusable="false" style="vertical-align: -0.238ex;">
+                            <defs>
+                                <path stroke-width="0" id="E1-MJMATHI-64"
+                                    d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z">
+                                </path>
+                            </defs>
+                            <g stroke="currentColor" fill="currentColor" stroke-width="0"
+                                transform="matrix(1 0 0 -1 0 0)">
+                                <use xlink:href="#E1-MJMATHI-64" x="0" y="0"></use>
+                            </g>
+                        </svg></span>
+                    <script type="math/tex">d</script>，则其贡献为 <span class="MathJax_SVG" tabindex="-1"
+                        style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="12.905ex" height="2.811ex" viewBox="0 -906.7 5556.5 1210.2" role="img"
+                            focusable="false" style="vertical-align: -0.705ex;">
+                            <defs>
+                                <path stroke-width="0" id="E2-MJMATHI-72"
+                                    d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z">
+                                </path>
+                                <path stroke-width="0" id="E2-MJMAIN-32"
+                                    d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z">
+                                </path>
+                                <path stroke-width="0" id="E2-MJMAIN-D7"
+                                    d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z">
+                                </path>
+                                <path stroke-width="0" id="E2-MJMAIN-28"
+                                    d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z">
+                                </path>
+                                <path stroke-width="0" id="E2-MJMAIN-2212"
+                                    d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
+                                <path stroke-width="0" id="E2-MJMAIN-31"
+                                    d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z">
+                                </path>
+                                <path stroke-width="0" id="E2-MJMAIN-29"
+                                    d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z">
+                                </path>
+                                <path stroke-width="0" id="E2-MJMATHI-64"
+                                    d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z">
+                                </path>
+                                <path stroke-width="0" id="E2-MJMAIN-2B"
+                                    d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z">
+                                </path>
+                            </defs>
+                            <g stroke="currentColor" fill="currentColor" stroke-width="0"
+                                transform="matrix(1 0 0 -1 0 0)">
+                                <use xlink:href="#E2-MJMATHI-72" x="0" y="0"></use>
+                                <use transform="scale(0.707)" xlink:href="#E2-MJMAIN-32" x="637" y="513"></use>
+                                <use xlink:href="#E2-MJMAIN-D7" x="1126" y="0"></use>
+                                <use xlink:href="#E2-MJMAIN-28" x="2126" y="0"></use>
+                                <use xlink:href="#E2-MJMAIN-2212" x="2515" y="0"></use>
+                                <use xlink:href="#E2-MJMAIN-31" x="3293" y="0"></use>
+                                <g transform="translate(3793,0)">
+                                    <use xlink:href="#E2-MJMAIN-29" x="0" y="0"></use>
+                                    <g transform="translate(389,362)">
+                                        <use transform="scale(0.707)" xlink:href="#E2-MJMATHI-64" x="0" y="0"></use>
+                                        <use transform="scale(0.707)" xlink:href="#E2-MJMAIN-2B" x="523" y="0"></use>
+                                        <use transform="scale(0.707)" xlink:href="#E2-MJMAIN-31" x="1301" y="0"></use>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg></span>
+                    <script type="math/tex">r^2\times(-1)^{d+1}</script>，统计答案即可。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
