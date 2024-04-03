@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
-    <title>Title here. - tder の blogs (*/ω＼*)</title>
+    <title>tder の blogs (*/ω＼*)</title>
     <link rel="stylesheet" type="text/css" href="/Blogs/style.css">
     <link rel="icon" type="image/x-icon" href="https://cdn.luogu.com.cn/upload/usericon/714254.png?x-oss-process=image/rounded-corners,r_30" />
 </head>
@@ -25,37 +25,48 @@
     </div>
     <div class="empty"></div>
     <div class="body">
-        <div class="menu" style="height: Height here.px;">
+        <div class="menu" style="height: 570px;">
             <div class="text">
                 <strong>Menu</strong>
             </div>
             <div class="flex">
-                <a href="/Blogs/menu/Tag here..html">
-                    <strong>「Tag here.」</strong>
+                <a href="/Blogs/menu/sol.html">
+                    <strong>「Sol」</strong>
                 </a>
             </div>
         </div>
-        <div class="article" style="height: Height here.px;">
+        <div class="article" style="height: 570px;">
             <div class="text">
-                <strong class="name">Title here.</strong>
+                <strong class="name" id="title"></strong>
                 <div class="info">
                     <div class="tag">
                         under
                         <div class="item">
-                            <a href="/Blogs/menu/Tag here..html">「Tag here.」</a>
+                            <a id="tag"></a>
                         </div>
                     </div>
                     <div class="time">
                         posted on
-                        <div class="item">&nbsp;Date here in the format of "yyyy/mm/dd".</div>
+                        <div class="item" id="date"></div>
                     </div>
                 </div>
             </div>
-            <div class="object">
-                Text here.
-            </div>
+            <div class="object" id="markdown"></div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>  
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+    <script type="text/javascript">
+        var title = "Title here.";
+        var tag = "Tag here.";
+        var date = "Date here.";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "./" + title + ".md", true); 
+    </script>
+    <script src="/Blogs/script.js"></script>
+    
 </body>
 
 </html>
