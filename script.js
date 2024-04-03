@@ -29,7 +29,7 @@ xhr.onreadystatechange = function() {
         document.getElementById("title").innerText = title;
         document.title = title + " - tder の Blogs";
         document.getElementById("tag").innerText = "「" + tag + "」";
-        document.getElementById("tag").href = "/Blogs/menu/" + tag + ".html";
+        document.getElementById("tag").href = "/menu/" + tag + ".html";
         document.getElementById("date").innerHTML = "&nbsp;" + date;
     }
 };
