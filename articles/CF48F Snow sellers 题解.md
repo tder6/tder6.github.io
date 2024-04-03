@@ -8,7 +8,7 @@
 
 时间复杂度 $O(n\times (m+m\log m))$，超时。
 
-考虑优化，参考快排思想与二分，维护二元组序列 $d=\{(x=\frac{w_j}{f_{i,j}},y=w_j)\}$。
+考虑优化，参考快排思想与二分，维护二元组序列 $d=\\{(x=\frac{w_j}{f_{i,j}},y=w_j)\\}$。
 
 记当前区间为 $[l,r]$ 且 $p=\dfrac{l+r}2$，每次所有满足 $x_{d_k}<x_{d_p}$ 的元素放在 $d_p$ 左侧，而将所有 $x_{d_k}>x_{d_p}$ 的元素放在 $d_p$ 右侧。那么，若 $\displaystyle\sum_{k=1}^{p}y_{d_k}>W$ 则有 $r\leftarrow p-1$，反之若 $\displaystyle\sum_{k=1}^{p}y_{d_k}<W$ 则 $l\leftarrow p+1$。特别的，若 $\displaystyle\sum_{k=1}^{p}y_{d_k}=W$ 或 $l>r$ 说明找到了答案。可累计答案使得计算 $\displaystyle\sum_{k=1}^{p}y_{d_k}$ 的均摊复杂度为 $O(m)$。
 
