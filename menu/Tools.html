@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
-    <title>tder の blogs (*/ω＼*)</title>
+    <title>「Tools」- tder の blogs (*/ω＼*)</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
     <link rel="icon" type="image/x-icon" href="https://cdn.luogu.com.cn/upload/usericon/714254.png?x-oss-process=image/rounded-corners,r_30" />
 </head>
@@ -30,46 +30,23 @@
                 <strong>Menu</strong>
             </div>
             <div class="flex">
-                <a href="/menu/Sol.html">
-                    <strong>「Sol」</strong>
-                </a>
+                <a href="/menu/Sol.html">Sol</a>
             </div>
             <div class="flex">
-                <a href="/menu/Tools.html">Tools</a>
+                <a href="/index.html">
+                    <strong>「Tools」</strong>
+                </a>
             </div>
         </div>
         <div class="article">
             <div class="text">
-                <strong class="name" id="title"></strong>
-                <div class="info">
-                    <div class="tag">
-                        under
-                        <div class="item">
-                            <a id="tag"></a>
-                        </div>
-                    </div>
-                    <div class="time">
-                        posted on
-                        <div class="item" id="date"></div>
-                    </div>
-                </div>
+                <strong>Articles</strong>
             </div>
-            <div class="object" id="markdown"></div>
+            <div class="flex">
+                <a href="/articles/Markdown Viewer.html">Markdown Viewer</a>
+            </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>  
-    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
-    <script type="text/javascript">
-        var title = "CF1313D Happy New Year 题解";
-        var tag = "Sol";
-        var date = "2024/03/27";
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "./" + title + ".md", true); 
-    </script>
-    <script src="/script.js"></script>
-    
 </body>
 
 </html>
