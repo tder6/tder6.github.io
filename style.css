@@ -3,7 +3,7 @@ body {
     margin-top: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
-    background: url('https://cdn.pixabay.com/photo/2021/01/24/20/21/cloud-5946381_960_720.jpg') center 45%;
+    background: url('https://images.pexels.com/photos/11961892/pexels-photo-11961892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: 100%;
     font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.5em;
@@ -71,7 +71,7 @@ a {
     align-items: center;
     padding-top: 30px;
     border-radius: 20px; 
-    height: 570px;
+    height: 620px;
     width: 200px;
     background-color: white;
     opacity: 0.7;
@@ -85,7 +85,7 @@ a {
     margin-left: 40px;
     padding-top: 30px;
     border-radius: 20px; 
-    height: 570px;
+    height: 620px;
     width: 1120px;
     background-color: white;
     opacity: 0.7;
