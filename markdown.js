@@ -25,6 +25,8 @@ xhr.onreadystatechange = function() {
             }
         }
         document.getElementById("markdown").innerHTML = re;
+
+        hljs.highlightAll();
         
         document.getElementById("title").innerText = title;
         document.title = title + " - tder の Blogs";
