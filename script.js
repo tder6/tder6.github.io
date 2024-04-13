@@ -1,3 +1,12 @@
+window.onload = function() {
+    document.getElementById("title").innerText = title;
+    document.title = title + " - tder の Blogs";
+    document.getElementById("tag").innerText = "「" + tag + "」";
+    document.getElementById("tag").href = "/menu/" + tag + ".html";
+    document.getElementById("date").innerHTML = "&nbsp;" + date;
+}
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "./" + title + ".md", true);
 xhr.onreadystatechange = function() {
     if(xhr.readyState === 4 && xhr.status === 200) {
         console.log(xhr.responseText);   
@@ -25,12 +34,6 @@ xhr.onreadystatechange = function() {
         }
         console.log(re);
         document.getElementById("markdown").innerHTML = re; 
-
-        document.getElementById("title").innerText = title;
-        document.title = title + " - tder の Blogs";
-        document.getElementById("tag").innerText = "「" + tag + "」";
-        document.getElementById("tag").href = "/menu/" + tag + ".html";
-        document.getElementById("date").innerHTML = "&nbsp;" + date;
     }
 };
 xhr.send();
