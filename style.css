@@ -4,6 +4,7 @@ body {
     margin-right: 0px;
     margin-bottom: 0px;
     background: url('./images/background.jpg');
+    background-position: center center;
     background-size: 1500px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.5em;
