@@ -2,7 +2,6 @@ var xhr = new XMLHttpRequest();
 xhr.open("GET", "./" + title + ".md", true);
 xhr.onreadystatechange = function() {
     if(xhr.readyState === 4 && xhr.status === 200) {
-        // console.log(xhr.responseText);   
         var md = marked.parse(xhr.responseText), re = "";
         for(var i = 0, b1 = 1, b2 = 1; i < md.length; i++) {
             if(i >= md.length - 2 || md[i] != '<' || md[i + 1] != 'a' || md[i + 2] != ' ') re += md[i];
@@ -25,7 +24,6 @@ xhr.onreadystatechange = function() {
                 i++;
             }
         }
-        // console.log(re);
         document.getElementById("markdown").innerHTML = re;
         
         document.getElementById("title").innerText = title;
