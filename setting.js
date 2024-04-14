@@ -47,3 +47,19 @@ window.onload = function() {
 window.onresize = function() {
     changeSize();
 }
+setScroll = function() {
+    var scrollStyle = `
+        <style css-id="scroll">
+            ::-webkit-scrollbar {            
+                width: 0px;
+            }
+        </style>
+    `
+    var newElement = document.createElement("newElement");
+    var scrollNode = document.querySelector("[css-id='scroll']") || null;
+    if (scrollNode) document.querySelector("head").removeChild(document.querySelector("[css-id='scroll']"));
+    newElement.innerHTML = scrollStyle;
+    var newScrollNode = newElement.querySelector("[css-id='scroll']");
+    document.getElementsByTagName("head")[0].appendChild(newScrollNode);
+}
+setScroll();
