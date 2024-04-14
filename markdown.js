@@ -1,5 +1,5 @@
 var markdownFile = new XMLHttpRequest();
-markdownFile.open("GET", "./" + title + ".markdownText", true);
+markdownFile.open("GET", "./" + title + ".md", true);
 markdownFile.onreadystatechange = function() {
     if(markdownFile.readyState === 4 && markdownFile.status === 200) {
         var markdownText = marked.parse(markdownFile.responseText), resultText = "";
