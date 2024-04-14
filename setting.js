@@ -19,7 +19,6 @@ menuFile.onreadystatechange = function() {
             }
         }
         menuList.sort(menuCompareFunction);
-        console.log(menuList);
         var articleElement = document.getElementsByClassName("menu")[0];
         for(var i in menuList) {
             var newArticle = document.createElement("div");
