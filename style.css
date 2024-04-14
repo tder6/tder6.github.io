@@ -73,7 +73,6 @@ a {
     align-items: center;
     padding-top: 30px;
     border-radius: 20px; 
-    /* height: 620px; */
     width: 200px;
     background-color: #630820;
     opacity: 0.7;
@@ -87,7 +86,6 @@ a {
     margin-left: 40px;
     padding-top: 30px;
     border-radius: 20px; 
-    /* height: 620px; */
     width: 1120px;
     background-color: #630820;
     opacity: 0.7;
@@ -110,7 +108,6 @@ a {
     justify-content: left;
 }
 .link {
-    /* text-decoration: underline; */
     color: aqua;
 }
 .time {

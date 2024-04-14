@@ -1,30 +1,30 @@
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "./" + title + ".md", true);
-xhr.onreadystatechange = function() {
-    if(xhr.readyState === 4 && xhr.status === 200) {
-        var md = marked.parse(xhr.responseText), re = "";
-        for(var i = 0, b1 = 1, b2 = 1; i < md.length; i++) {
-            if(i >= md.length - 2 || md[i] != '<' || md[i + 1] != 'a' || md[i + 2] != ' ') re += md[i];
+var markdownFile = new XMLHttpRequest();
+markdownFile.open("GET", "./" + title + ".markdownText", true);
+markdownFile.onreadystatechange = function() {
+    if(markdownFile.readyState === 4 && markdownFile.status === 200) {
+        var markdownText = marked.parse(markdownFile.responseText), resultText = "";
+        for(var i = 0, b1 = 1, b2 = 1; i < markdownText.length; i++) {
+            if(i >= markdownText.length - 2 || markdownText[i] != '<' || markdownText[i + 1] != 'a' || markdownText[i + 2] != ' ') resultText += markdownText[i];
             else {
-                re += "<a class=\"link\" ";
+                resultText += "<a class=\"link\" ";
                 i += 2;
             }
         } 
-        md = re, re = "";
-        for(var i = 0, b1 = 1, b2 = 1; i < md.length; i++) {
-            if(md[i] != '$') re += md[i];
-            else if(i < md.length - 1 && md[i + 1] != '$') {
-                if(b1) re += "\\(";
-                else re += "\\)";
+        markdownText = resultText, resultText = "";
+        for(var i = 0, b1 = 1, b2 = 1; i < markdownText.length; i++) {
+            if(markdownText[i] != '$') resultText += markdownText[i];
+            else if(i < markdownText.length - 1 && markdownText[i + 1] != '$') {
+                if(b1) resultText += "\\(";
+                else resultText += "\\)";
                 b1 = !b1;
-            } else if(md[i + 1] == '$') {
-                if(b2) re += "\\[";
-                else re += "\\]";
+            } else if(markdownText[i + 1] == '$') {
+                if(b2) resultText += "\\[";
+                else resultText += "\\]";
                 b2 = !b2;
                 i++;
             }
         }
-        document.getElementById("markdown").innerHTML = re;
+        document.getElementById("markdown").innerHTML = resultText;
 
         hljs.highlightAll();
         
@@ -37,4 +37,4 @@ xhr.onreadystatechange = function() {
         changeSize();
     }
 };
-xhr.send();
+markdownFile.send();
