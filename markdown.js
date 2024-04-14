@@ -25,9 +25,7 @@ markdownFile.onreadystatechange = function() {
             }
         }
         document.getElementById("markdown").innerHTML = resultText;
-
         hljs.highlightAll();
-        
         document.getElementById("title").innerText = title;
         document.title = title + " - tder の Blogs";
         document.getElementById("tag").innerText = "「" + tag + "」";
