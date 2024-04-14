@@ -41,7 +41,7 @@ compareProblem = function(a, b) {
     } else {
         var dictionary = {"Luogu" : 8, "AT" : 7, "CF" : 6, "LOJ" : 5, "POJ" : 4, "HDU" : 3, "UVA" : 2, "SP" : 1};
         if(dictionary[typeOfA[0]] > dictionary[typeOfB[0]]) return -1;
-        else if(dictionary[typeOfA[0]] < dictionary[typeOfB[0]]) return 0;
+        else if(dictionary[typeOfA[0]] < dictionary[typeOfB[0]]) return 1;
         else return NaN;
     }
 }
