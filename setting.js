@@ -26,7 +26,7 @@ menuFile.onreadystatechange = function() {
             newArticle.className = "flex";
             if(tag !== menuList[i]) newArticle.innerHTML = "<a href=\"/menu/" + menuList[i] + ".html\">" + menuList[i] + "</a>";
             else if(typeof(goBackToIndex) === "undefined") newArticle.innerHTML = "<a href=\"/menu/" + menuList[i] + ".html\"><strong>「" + menuList[i] + "」</strong></a>";
-            else newArticle.innerHTML = "<a href=\"/index.html\"><strong>「" + menuList[i] + "」</strong></a>";
+            else newArticle.innerHTML = "<a href=\"/\"><strong>「" + menuList[i] + "」</strong></a>";
             articleElement.appendChild(newArticle);
         }
     }
