@@ -57,9 +57,32 @@ setScroll = function() {
     `
     var newElement = document.createElement("newElement");
     var scrollNode = document.querySelector("[css-id='scroll']") || null;
-    if (scrollNode) document.querySelector("head").removeChild(document.querySelector("[css-id='scroll']"));
+    if(scrollNode) document.querySelector("head").removeChild(document.querySelector("[css-id='scroll']"));
     newElement.innerHTML = scrollStyle;
     var newScrollNode = newElement.querySelector("[css-id='scroll']");
     document.getElementsByTagName("head")[0].appendChild(newScrollNode);
 }
 setScroll();
+setCopyRight = function() {
+	var copyRightHtml = `
+		<div class="inner">©Since 2024 By&nbsp;<a class="link" href="https://github.com/tder6">tder</a></div>
+		<div class="icon">
+			<a href="/TBC." title="Based on Bloger."><img src="https://img.shields.io/badge/Frame-Bloger-c0392b?logo=Framer" alt=""></a>
+			&nbsp;
+			<a href="https://marked.js.org/" title="Markdown powered by Marked.js."><img src="https://img.shields.io/badge/Markdown-Marked-C0392B?logo=Markdown" alt=""></a>
+			&nbsp;
+			<a href="https://www.mathjax.org/" title="LaTeX powered by MathJax."><img src="https://img.shields.io/badge/LaTeX-MathJax-b52e31?logo=Latex" alt=""></a>
+			&nbsp;
+			<a href="https://highlightjs.org/" title="Code highlighting powered by Highlight.js."><img src="https://img.shields.io/badge/Code-Highlight-96281b?logo=Codecademy" alt=""></a>
+			&nbsp;
+			<a href="https://github.com/tder6/tder6.github.io/" title="Source code hosted on Github."><img src="https://img.shields.io/badge/Source-Github-822721?logo=Github" alt=""></a>
+			&nbsp;
+			<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Using BY-NC-SA 4.0 license."><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-630820?style=flat&logo=Claris" alt=""></a>
+		</div>
+	`
+	var copyRightElement = document.createElement("div");
+	copyRightElement.className = "flex copyright";
+	copyRightElement.innerHTML = copyRightHtml;
+    document.body.appendChild(copyRightElement);
+}
+setCopyRight();
