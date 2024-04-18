@@ -89,12 +89,7 @@ setCopyRight = function() {
 }
 setTitle = function() {
 	var linkList = document.getElementsByTagName("a");
-	// console.log(linkList);
-	// console.log(linkList.length);
-	// console.log(linkList[0]);
 	for(var i in linkList) {
-		// console.log(linkList[i]);
-		// if(i.classList.length > 0) console.log(i.classList[0]);
 		if(linkList[i].className !== "link") continue;
 		console.log(linkList[i]);
 		linkList[i].title = "Link to " + linkList[i].href + ".";
