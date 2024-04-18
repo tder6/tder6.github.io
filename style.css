@@ -58,17 +58,8 @@ a {
     text-decoration: none;
     color: white;
 }
-a:hover {
+.link:hover {
 	text-decoration: underline;
-}
-.headline a:hover {
-	text-decoration: none;
-}
-.info a:hover {
-	text-decoration: none;
-}
-.icon a:hover {
-	text-decoration: none;
 }
 .body {
     display: flex;

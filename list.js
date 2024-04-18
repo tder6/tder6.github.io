@@ -76,6 +76,8 @@ listFile.onreadystatechange = function() {
             articleElement.appendChild(newArticle);
         }
         if(tag !== "All") document.title = "「" + tag + "」" + "- tder の Blogs (*/ω＼*)";
+		changeSize();
+		setTitle();
     }
 }
 listFile.send();

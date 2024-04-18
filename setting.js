@@ -43,6 +43,9 @@ changeSize = function() {
 }
 window.onload = function() {
     changeSize();
+	setScroll();
+	setCopyRight();
+	setTitle();
 }
 window.onresize = function() {
     changeSize();
@@ -62,14 +65,13 @@ setScroll = function() {
     var newScrollNode = newElement.querySelector("[css-id='scroll']");
     document.getElementsByTagName("head")[0].appendChild(newScrollNode);
 }
-setScroll();
 setCopyRight = function() {
 	var copyRightHtml = `
 		<div class="inner">©Since 2024 By&nbsp;<a class="link" href="https://github.com/tder6">tder</a></div>
 		<div class="icon">
-			<a href="/TBC." title="Based on Bloger."><img src="https://img.shields.io/badge/Frame-Bloger-c0392b?logo=Framer" alt=""></a>
+			<a href="/TBC." title="Based on Bloger."><img src="https://img.shields.io/badge/Frame-Bloger-c63a2a?logo=Framer" alt=""></a>
 			&nbsp;
-			<a href="https://marked.js.org/" title="Markdown powered by Marked.js."><img src="https://img.shields.io/badge/Markdown-Marked-C0392B?logo=Markdown" alt=""></a>
+			<a href="https://marked.js.org/" title="Markdown powered by Marked.js."><img src="https://img.shields.io/badge/Markdown-Marked-c0392b?logo=Markdown" alt=""></a>
 			&nbsp;
 			<a href="https://www.mathjax.org/" title="LaTeX powered by MathJax."><img src="https://img.shields.io/badge/LaTeX-MathJax-b52e31?logo=Latex" alt=""></a>
 			&nbsp;
@@ -85,4 +87,16 @@ setCopyRight = function() {
 	copyRightElement.innerHTML = copyRightHtml;
     document.body.appendChild(copyRightElement);
 }
-setCopyRight();
+setTitle = function() {
+	var linkList = document.getElementsByTagName("a");
+	// console.log(linkList);
+	// console.log(linkList.length);
+	// console.log(linkList[0]);
+	for(var i in linkList) {
+		// console.log(linkList[i]);
+		// if(i.classList.length > 0) console.log(i.classList[0]);
+		if(linkList[i].className !== "link") continue;
+		console.log(linkList[i]);
+		linkList[i].title = "Link to " + linkList[i].href + ".";
+	}
+}

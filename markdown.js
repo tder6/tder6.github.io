@@ -32,6 +32,7 @@ markdownFile.onreadystatechange = function() {
         document.getElementById("tag").href = "/menu/" + tag + ".html";
         document.getElementById("date").innerHTML = "&nbsp;" + date; 
         changeSize();
+		setTitle();
     }
 };
 markdownFile.send();
