@@ -9,3 +9,4 @@ CF643C Levels and Regions 题解
 CF1082G Petya and Graph 题解
 CF1313D Happy New Year 题解
 CF1569F Palindromic Hamiltonian Path 题解
+CF623B Array GCD 题解

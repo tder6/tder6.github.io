@@ -69,7 +69,7 @@ setCopyRight = function() {
 	var copyRightHtml = `
 		<div class="inner">©Since 2024 By&nbsp;<a class="link" href="https://github.com/tder6">tder</a></div>
 		<div class="icon">
-			<a href="/TBC." title="Based on Bloger."><img src="https://img.shields.io/badge/Frame-Bloger-c63a2a?logo=Framer" alt=""></a>
+			<a href="https://TBC." title="Based on Bloger."><img src="https://img.shields.io/badge/Frame-Bloger-c63a2a?logo=Framer" alt=""></a>
 			&nbsp;
 			<a href="https://marked.js.org/" title="Markdown powered by Marked.js."><img src="https://img.shields.io/badge/Markdown-Marked-c0392b?logo=Markdown" alt=""></a>
 			&nbsp;
