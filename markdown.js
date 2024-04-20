@@ -4,11 +4,10 @@ markdownFile.onreadystatechange = function() {
     if(markdownFile.readyState === 4 && markdownFile.status === 200) {
         var markdownText = marked.parse(markdownFile.responseText), resultText = "";
         for(var i = 0, b1 = 1, b2 = 1; i < markdownText.length; i++) {
-            if(i >= markdownText.length - 2 || markdownText[i] !== '<' || markdownText[i + 1] !== 'a' || markdownText[i + 2] !== ' ') resultText += markdownText[i];
-            else {
-                resultText += "<a class=\"link\" ";
-                i += 2;
-            }
+            if(i < markdownText.length - 2 && markdownText.substr(i, 3) === "<a ") {
+				resultText += "<a class=\"link\" ";
+				i += 2;
+			} else resultText += markdownText[i];
         } 
         markdownText = resultText, resultText = "";
         for(var i = 0, b1 = 1, b2 = 1; i < markdownText.length; i++) {

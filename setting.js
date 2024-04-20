@@ -91,7 +91,6 @@ setTitle = function() {
 	var linkList = document.getElementsByTagName("a");
 	for(var i in linkList) {
 		if(linkList[i].className !== "link") continue;
-		console.log(linkList[i]);
 		linkList[i].title = "Link to " + linkList[i].href + ".";
 	}
 }
