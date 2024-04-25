@@ -13,3 +13,5 @@ Markdown Viewer
 CF623B Array GCD 题解
 CF547C Mike and Foam 题解
 CF687C The Values You Can Make 题解
+G8T2M Dairy
+CF990G GCD Counting 题解

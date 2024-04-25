@@ -1,14 +1,14 @@
-给定 $V=a\times b\times c$，试求 $S=2\times(ab+ac+bc)$ 的最小值。
+给定 $V=a\\times b\\times c$，试求 $S=2\\times(ab+ac+bc)$ 的最小值。
 
 暴搜暴搜！
 
-推式子。由 $V=a\times b\times c$ 有 $a=\dfrac V{bc}$，即 $bc=\dfrac aV$。
+推式子。由 $V=a\\times b\\times c$ 有 $a=\\dfrac V{bc}$，即 $bc=\\dfrac aV$。
 
-而就有 $S=2\times(ab+ac+bc)=2\times(a(b+c)+bc)$。
+而就有 $S=2\\times(ab+ac+bc)=2\\times(a(b+c)+bc)$。
 
-由基本不等式，有 $b+c\ge2\sqrt{bc}$，所以 $a(b+c)+bc\ge2a\sqrt{bc}$，而 $2\times(a(b+c)+bc)\ge4a\sqrt{bc}$，即 $S\ge4a\sqrt{bc}$。
+由基本不等式，有 $b+c\\ge2\\sqrt{bc}$，所以 $a(b+c)+bc\\ge2a\\sqrt{bc}$，而 $2\\times(a(b+c)+bc)\\ge4a\\sqrt{bc}$，即 $S\\ge4a\\sqrt{bc}$。
 
-有了上面的结论，我们令 $a\le b\le c$，则显然有 $a\le\sqrt[3]{V}$，且 $b\le\sqrt{\dfrac Va}$，于是暴搜即可。
+有了上面的结论，我们令 $a\\le b\\le c$，则显然有 $a\\le\\sqrt[3]{V}$，且 $b\\le\\sqrt{\\dfrac Va}$，于是暴搜即可。
 
 另外注意极大值的赋值，若为 $10^{18}$ 可能不够。
 

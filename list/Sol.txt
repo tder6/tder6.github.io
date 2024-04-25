@@ -12,3 +12,4 @@ CF1569F Palindromic Hamiltonian Path 题解
 CF623B Array GCD 题解
 CF547C Mike and Foam 题解
 CF687C The Values You Can Make 题解
+CF990G GCD Counting 题解
