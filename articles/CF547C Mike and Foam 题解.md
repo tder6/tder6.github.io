@@ -2,7 +2,7 @@
 
 $$
 \begin{aligned}
-f(i)&=\sum_{x=1}^n\sum_{y=1}^{x-1}~[i~|~\gcd(a_x,a_y)] \\
+f(i)&=\sum_{x=1}^n\sum_{y=1}^{x-1}~[i\mid\gcd(a_x,a_y)] \\
 g(i)&=\sum_{x=1}^n\sum_{y=1}^{x-1}~[\gcd(a_x,a_y)=i]
 \end{aligned}
 $$
@@ -13,8 +13,8 @@ $$
 
 $$
 \begin{aligned}
-f(i)&=\sum_{i~|~d}^ng(d) \\
-g(i)&=\sum_{i~|~d}^n\left(f(d)\times\mu\left(\frac di\right)\right)
+f(i)&=\sum_{i\mid d}^ng(d) \\
+g(i)&=\sum_{i\mid d}^n\left(f(d)\times\mu\left(\frac di\right)\right)
 \end{aligned}
 $$
 
@@ -22,7 +22,7 @@ $$
 
 $$
 \begin{aligned}
-g(1)&=\sum_{1~|~d}^n\left(f(d)\times\mu\left(\frac d1\right)\right) \\
+g(1)&=\sum_{1\mid d}^n\left(f(d)\times\mu\left(\frac d1\right)\right) \\
   &=\sum_{j=1}^n\left(f(j)\times\mu\left(j\right)\right) 
 \end{aligned}
 $$
@@ -30,7 +30,7 @@ $$
 我们再定义：
 
 $$
-h(i)=\sum_{j=1}^n~[i~|~a_j]
+h(i)=\sum_{j=1}^n~[i\mid a_j]
 $$
 
 那么，显然的：
@@ -43,13 +43,13 @@ $$
 
 我们记 $h_i=h(i)$ 且 $f_i=f(i)$。
 
-当加入 $a_x$ 时，有且仅有可能对所有满足 $i~|~a_x$ 的 $h_i$ 产生贡献。于是考虑枚举 $a_x$ 的所有因数 $i$，并将 $h_i\gets h_i+1$，从而计算得出 $f_i$ 的值，最终使用莫比乌斯反演板子求得答案 $\text{ans}=g(1)$。反之删除同理。
+当加入 $a_x$ 时，有且仅有可能对所有满足 $i\mid a_x$ 的 $h_i$ 产生贡献。于是考虑枚举 $a_x$ 的所有因数 $i$，并将 $h_i\gets h_i+1$，从而计算得出 $f_i$ 的值，最终使用莫比乌斯反演板子求得答案 $\text{ans}=g(1)$。反之删除同理。
 
 形式化的，加入 $a_x$ 时：
 
 $$
 \begin{array}{ll}
-1&\textbf{for }\text{each }i~|~a_x \\
+1&\textbf{for }\text{each }i\mid a_x \\
 2&\qquad h_i\gets h_i+1 \\
 3&\qquad pre\gets f_i \\
 4&\qquad new\gets\dfrac{h_i\times\left(h_i-1\right)}2 \\
