@@ -169,10 +169,10 @@ textarea {
 }
 .copy {
 	position: fixed; 
-	z-index: 9999; 
+	z-index: 9998; 
 	top: 90px; 
 	right: 30px; 
-	background-color: #822721;
+	background-color: #96281b;
 	height: 30px;
 	width: 145px;
 	opacity: 0.85;
@@ -181,4 +181,13 @@ textarea {
 .copy:hover {
 	height: 35px;
 	width: 150px;
+}
+.pointer {
+	width: 10px;
+	height: 10px;
+	background-color: #c63a2a;
+	border-radius: 50%;
+	position: absolute;
+	pointer-events: none;
+	z-index: 9999;
 }

@@ -90,7 +90,26 @@ setCopyRight = function() {
 setTitle = function() {
 	var linkList = document.getElementsByTagName("a");
 	for(var i in linkList) {
+		if(!(i >= 0 && i <= linkList.length)) continue;
+		linkList[i].style.cursor = "none";
 		if(linkList[i].className !== "link") continue;
 		linkList[i].title = "Link to " + linkList[i].href + ".";
 	}
 }
+setPointer = function() {
+	var copyMarkdownElement = document.createElement("div");
+	copyMarkdownElement.className = "pointer";
+    document.body.appendChild(copyMarkdownElement);
+}
+setPointer();
+var pointer = document.getElementsByClassName("pointer")[0], lastClientY = 0;
+function updatePointerPosition(e) {
+	var x = e.clientX, y = e.clientY + window.scrollY;
+	if(typeof(e.clientY) === "undefined") y = lastClientY + window.scrollY;
+	else lastClientY = e.clientY;
+    pointer.style.left = x + 'px';
+    pointer.style.top = y + 'px';
+}
+document.addEventListener('mousemove', updatePointerPosition);
+window.addEventListener('scroll', updatePointerPosition);
+document.body.style.cursor = "none";
