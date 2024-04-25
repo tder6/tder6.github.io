@@ -102,8 +102,9 @@ setPointer = function() {
     document.body.appendChild(copyMarkdownElement);
 }
 setPointer();
-var pointer = document.getElementsByClassName("pointer")[0], lastClientY = 0;
+var lastClientY = 0;
 function updatePointerPosition(e) {
+	var pointer = document.getElementsByClassName("pointer")[0];
 	var x = e.clientX, y = e.clientY + window.scrollY;
 	if(typeof(e.clientY) === "undefined") y = lastClientY + window.scrollY;
 	else lastClientY = e.clientY;
@@ -111,5 +112,11 @@ function updatePointerPosition(e) {
     pointer.style.top = y + 'px';
 }
 document.addEventListener('mousemove', updatePointerPosition);
-window.addEventListener('scroll', updatePointerPosition);
+document.addEventListener('scroll', updatePointerPosition);
 document.body.style.cursor = "none";
+document.body.addEventListener('mouseout', function(event) {
+    if(!event.relatedTarget || (event.relatedTarget === null)) document.body.removeChild(document.body.getElementsByClassName("pointer")[0]);
+});
+document.body.addEventListener('mouseenter', function(event) {
+    if(!event.relatedTarget || (event.relatedTarget === null)) setPointer();
+});
