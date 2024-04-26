@@ -13,3 +13,10 @@ CF623B Array GCD 题解
 CF547C Mike and Foam 题解
 CF687C The Values You Can Make 题解
 CF990G GCD Counting 题解
+P9126 [USACO23FEB] Moo Route II S 题解
+P10251 农场 题解
+P10244 String Minimization 题解
+ABC344C A+B+C 题解
+「SFOI Round 1」Home 题解
+CF1926D Vlad and Division 题解
+P10223 [COCI 2023-2024 3rd] Eurokod 题解

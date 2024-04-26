@@ -35,9 +35,12 @@ changeSize = function() {
     document.body.style.backgroundSize = Math.max(document.body.scrollWidth, 1500).toString() + "px"; 
     var titleHeight = window.getComputedStyle(document.getElementsByClassName("text")[1]).height, textHeight;
     if(document.getElementById("markdown") != undefined) textHeight = window.getComputedStyle(document.getElementById("markdown")).height;
-    else textHeight = "0px";
+    else {
+		var linkList = document.getElementsByClassName("article")[0].getElementsByClassName("flex");
+		textHeight = linkList.length * 27 - 20 + "px";
+	}
     var titleHeightNumber = Number(titleHeight.substr(0, titleHeight.length - 2)), textHeightNumber = Number(textHeight.substr(0, textHeight.length - 2));
-    var totalHeight = Math.max(titleHeightNumber + textHeightNumber + 22.5, document.getElementsByClassName("whole")[0].scrollHeight - 170);
+	var totalHeight = Math.max(titleHeightNumber + textHeightNumber + 22.5, document.getElementsByClassName("whole")[0].scrollHeight - 170);
     document.getElementsByClassName("article")[0].style.height = totalHeight.toString() + "px"; 
     document.getElementsByClassName("menu")[0].style.height = totalHeight.toString() + "px"; 
 }
@@ -107,10 +110,12 @@ setPointer = function() {
 	pointerElement.className = "pointer";
     document.body.appendChild(pointerElement);
 }
-var lastClientY = 0;
+var lastClientX = 0, lastClientY = 0;
 function updatePointerPosition(e) {
 	var pointer = document.getElementsByClassName("pointer")[0];
 	var x = e.clientX, y = e.clientY + window.scrollY;
+	if(typeof(e.clientX) === "undefined") x = lastClientX;
+	else lastClientX = e.clientX;
 	if(typeof(e.clientY) === "undefined") y = lastClientY + window.scrollY;
 	else lastClientY = e.clientY;
     pointer.style.left = x + 'px';

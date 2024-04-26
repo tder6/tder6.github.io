@@ -21,8 +21,10 @@ typeOfProblem = function(text) {
     if(problemNumber.substring(0, firstDigit) === "UVA") return ["UVA", Number(problemNumber.substring(firstDigit, problemNumber.length))];
     if(problemNumber.substring(0, firstDigit) === "LOJ") return ["LOJ", Number(problemNumber.substring(firstDigit, problemNumber.length))];
     if(problemNumber.substring(0, firstDigitCfAt) == "CF") return ["CF", Number(problemNumber.substring(firstDigitCfAt, problemNumber.length - 1)), problemNumber[problemNumber.length - 1]];
-    if(problemNumber.substring(0, firstDigitCfAt) == "AT") return ["AT", Number(problemNumber.substring(firstDigitCfAt, problemNumber.length - 1)), problemNumber[problemNumber.length - 1]];
-    return "NaN";
+    if(problemNumber.substring(0, firstDigitCfAt) == "ABC") return ["ABC", Number(problemNumber.substring(firstDigitCfAt, problemNumber.length - 1)), problemNumber[problemNumber.length - 1]];
+    if(problemNumber.substring(0, firstDigitCfAt) == "ARC") return ["ARC", Number(problemNumber.substring(firstDigitCfAt, problemNumber.length - 1)), problemNumber[problemNumber.length - 1]];
+	if(problemNumber.substring(0, firstDigitCfAt) == "AHC") return ["AHC", Number(problemNumber.substring(firstDigitCfAt, problemNumber.length - 1)), problemNumber[problemNumber.length - 1]];
+	return "NaN";
 }
 isProblem = function(text) {
     return typeof(typeOfProblem(text)) === "object" && typeOfProblem(text)[0] !== "NaN";
@@ -39,7 +41,7 @@ compareProblem = function(a, b) {
             else return 0;
         }
     } else {
-        var dictionary = {"Luogu" : 8, "AT" : 7, "CF" : 6, "LOJ" : 5, "POJ" : 4, "HDU" : 3, "UVA" : 2, "SP" : 1};
+        var dictionary = {"Luogu" : 8, "ABC" : 7.3, "ARC" : 7.2, "AHC" : 7.1, "CF" : 6, "LOJ" : 5, "POJ" : 4, "HDU" : 3, "UVA" : 2, "SP" : 1};
         if(dictionary[typeOfA[0]] > dictionary[typeOfB[0]]) return -1;
         else if(dictionary[typeOfA[0]] < dictionary[typeOfB[0]]) return 1;
         else return NaN;

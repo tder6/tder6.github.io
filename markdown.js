@@ -8,6 +8,7 @@ markdownFile.onreadystatechange = function() {
             if(readText[i] === '\\' && (!b1 || !b2)) resultText += "\\\\";
 			else if(readText[i] === '~' && (!b1 || !b2)) resultText += "\\~";
 			else if(readText[i] === '*' && (!b1 || !b2)) resultText += "\\*";
+			else if(readText[i] === '_' && (!b1 || !b2)) resultText += "\\_";
 			else resultText += readText[i];
 			if(readText[i] !== '$') continue;
             else if(i < readText.length - 1 && readText[i + 1] !== '$') b1 = !b1;
