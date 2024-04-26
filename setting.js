@@ -92,16 +92,21 @@ setTitle = function() {
 	for(var i in linkList) {
 		if(!(i >= 0 && i <= linkList.length)) continue;
 		linkList[i].style.cursor = "none";
+		linkList[i].addEventListener('mouseover', function(event) {
+			document.body.getElementsByClassName("pointer")[0].style.height = document.body.getElementsByClassName("pointer")[0].style.width = "15px";
+		});
+		linkList[i].addEventListener('mouseout', function(event) {
+			document.body.getElementsByClassName("pointer")[0].style.height = document.body.getElementsByClassName("pointer")[0].style.width = "10px";
+		});
 		if(linkList[i].className !== "link") continue;
 		linkList[i].title = "Link to " + linkList[i].href + ".";
 	}
 }
 setPointer = function() {
-	var copyMarkdownElement = document.createElement("div");
-	copyMarkdownElement.className = "pointer";
-    document.body.appendChild(copyMarkdownElement);
+	var pointerElement = document.createElement("div");
+	pointerElement.className = "pointer";
+    document.body.appendChild(pointerElement);
 }
-setPointer();
 var lastClientY = 0;
 function updatePointerPosition(e) {
 	var pointer = document.getElementsByClassName("pointer")[0];
@@ -117,6 +122,6 @@ document.body.style.cursor = "none";
 document.body.addEventListener('mouseout', function(event) {
     if(!event.relatedTarget || (event.relatedTarget === null)) document.body.removeChild(document.body.getElementsByClassName("pointer")[0]);
 });
-document.body.addEventListener('mouseenter', function(event) {
+document.body.addEventListener('mouseover', function(event) {
     if(!event.relatedTarget || (event.relatedTarget === null)) setPointer();
 });

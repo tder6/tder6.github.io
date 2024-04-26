@@ -58,6 +58,12 @@ setCopyMarkdown = function() {
 	var copyMarkdownElement = document.createElement("div");
 	copyMarkdownElement.className = "copy flex";
 	copyMarkdownElement.innerHTML = copyMarkdownHtml;
+	copyMarkdownElement.addEventListener('mouseover', function(event) {
+		document.body.getElementsByClassName("pointer")[0].style.height = document.body.getElementsByClassName("pointer")[0].style.width = "15px";
+	});
+	copyMarkdownElement.addEventListener('mouseout', function(event) {
+		document.body.getElementsByClassName("pointer")[0].style.height = document.body.getElementsByClassName("pointer")[0].style.width = "10px";
+	});
     document.body.appendChild(copyMarkdownElement);
 }
 setCopyMarkdown();
