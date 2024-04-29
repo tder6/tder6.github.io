@@ -33,6 +33,7 @@ menuFile.onreadystatechange = function() {
 menuFile.send();
 changeSize = function() {
     document.body.style.backgroundSize = Math.max(document.body.scrollWidth, 1500).toString() + "px"; 
+	document.body.getElementsByClassName("article")[0].style.width = (document.body.scrollWidth - 360).toString() + "px";
     var titleHeight = window.getComputedStyle(document.getElementsByClassName("text")[1]).height, textHeight;
     if(document.getElementById("markdown") != undefined) textHeight = window.getComputedStyle(document.getElementById("markdown")).height;
     else {
