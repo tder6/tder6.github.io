@@ -20,3 +20,4 @@ ABC344C A+B+C 题解
 「SFOI Round 1」Home 题解
 CF1926D Vlad and Division 题解
 P10223 [COCI 2023-2024 3rd] Eurokod 题解
+P9878 [EC Final 2021] Check Pattern is Bad 题解

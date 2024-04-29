@@ -3,7 +3,7 @@ body {
     margin-top: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
-    background: url('/images/background.jpg');
+    background: url('/images/background.jpeg');
     background-position: center center;
     background-size: 1500px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -20,11 +20,11 @@ body {
     height: 100%;
     z-index: -9999;
     background-color: black;
-    opacity: 0.6;
+    opacity: 0.3;
 }
 .headline {
-    background-color: #822721;
-    opacity: 0.85;
+    background-color: #001531;
+    opacity: 0.9;
     height: 60px;
     z-index: 9999;
     display: flex;
@@ -80,8 +80,8 @@ a {
     padding-top: 30px;
     border-radius: 20px; 
     width: 200px;
-    background-color: #630820;
-    opacity: 0.7;
+    background-color: #062748;
+    opacity: 0.8;
 }
 .article {
     display: flex;
@@ -92,8 +92,8 @@ a {
     padding-top: 30px;
     border-radius: 20px; 
     width: 1120px;
-    background-color: #630820;
-    opacity: 0.7;
+    background-color: #062748;
+    opacity: 0.8;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -172,7 +172,7 @@ textarea {
 	z-index: 9998; 
 	top: 90px; 
 	right: 30px; 
-	background-color: #96281b;
+	background-color: #f9787c;
 	height: 30px;
 	width: 145px;
 	opacity: 0.85;
@@ -185,7 +185,7 @@ textarea {
 .pointer {
 	width: 10px;
 	height: 10px;
-	background-color: #c63a2a;
+	background-color: #ff8360;
 	border-radius: 50%;
 	position: absolute;
 	pointer-events: none;
