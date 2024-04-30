@@ -6,7 +6,7 @@ body {
     background: url('/images/background.jpeg');
     background-position: center center;
     background-size: 1500px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, "宋体";
     line-height: 1.5em;
     font-size: large;
     background-attachment: fixed;
@@ -191,4 +191,29 @@ textarea {
 	pointer-events: none;
 	z-index: 9999;
 	opacity: 0.9;
+}
+table, table tr th, table tr td {
+	border: 1px solid white;
+	border-collapse: collapse; 
+	padding: 5px;
+}
+table {
+	margin-top: 18px;
+	margin-bottom: 18px;
+}
+blockquote {
+	margin-top: 18px;
+	margin-bottom: 18px;
+	padding: 9px 18px;
+	border-left: 4px solid white;
+	margin-left: 2px;
+	margin-right: 0px;
+	padding-right: 0px;
+}
+blockquote p {
+	margin: 0; 
+}
+.object strong {
+	font-family: Georgia, 'Times New Roman', Times, "黑体";
+	font-weight: normal;
 }
