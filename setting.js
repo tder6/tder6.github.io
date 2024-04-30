@@ -94,7 +94,7 @@ setCopyRight = function() {
 setTitle = function() {
 	var linkList = document.getElementsByTagName("a");
 	for(var i in linkList) {
-		if(!(i >= 0 && i <= linkList.length)) continue;
+		if(!(i >= 0 && i < linkList.length)) continue;
 		linkList[i].style.cursor = "none";
 		linkList[i].addEventListener('mouseover', function(event) {
 			document.body.getElementsByClassName("pointer")[0].style.height = document.body.getElementsByClassName("pointer")[0].style.width = "15px";
@@ -126,7 +126,11 @@ document.addEventListener('mousemove', updatePointerPosition);
 document.addEventListener('scroll', updatePointerPosition);
 document.body.style.cursor = "none";
 document.body.addEventListener('mouseout', function(event) {
-    if(!event.relatedTarget || (event.relatedTarget === null)) document.body.removeChild(document.body.getElementsByClassName("pointer")[0]);
+    if(!event.relatedTarget || (event.relatedTarget === null)) 
+		for(var i in document.body.getElementsByClassName("pointer")) {
+			if(!(i >= 0 && i < document.body.getElementsByClassName("pointer").length)) continue;
+			document.body.removeChild(document.body.getElementsByClassName("pointer")[i]);
+		}
 });
 document.body.addEventListener('mouseover', function(event) {
     if(!event.relatedTarget || (event.relatedTarget === null)) setPointer();
