@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	fetch('https://moe.jitsu.top/img/?sort=r18&type=json&num=100')
+	.then(response => {
+		return response.json();
+	})
+	.then(data => {
+		console.log(data.pics);
+		for(var i in data.pics) {
+			var newImg = document.createElement("img");
+			newImg.src = data.pics[i];
+			console.log(newImg);
+			document.body.appendChild(newImg);
+		}
+	})
+	</script>
+</body>
+</html>
