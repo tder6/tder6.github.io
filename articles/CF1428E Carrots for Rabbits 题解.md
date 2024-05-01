@@ -8,7 +8,7 @@
 
 > 当序列 $\{a_j\}$ 中有 $j-(i\bmod j)$ 个 $\left\lfloor\dfrac ij\right\rfloor$ 和 $i\bmod j$ 个 $\left\lfloor\dfrac ij\right\rfloor+1$ 时，此时 $f(i,j)$ 取到最小值，为：
 > $$
->   f(i,j)=\left(j-(i\bmod j)\right)\times\left\lfloor\dfrac ij\right\rfloor+(i\bmod j)\left(\left\lfloor\dfrac ij\right\rfloor+1\right)
+>   f(i,j)=\left(j-(i\bmod j)\right)\times\left\lfloor\dfrac ij\right\rfloor^2+(i\bmod j)\left(\left\lfloor\dfrac ij\right\rfloor+1\right)^2
 > $$
 
 这个很好证明，类似「和一定差小积大」的思考方式即可。
