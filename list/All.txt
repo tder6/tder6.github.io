@@ -25,3 +25,4 @@ HihoCoder S7 Note
 P10223 [COCI 2023-2024 3rd] Eurokod 题解
 P9878 [EC Final 2021] Check Pattern is Bad 题解
 CF1628D Game on Sum 题解
+CF1428E Carrots for Rabbits 题解
