@@ -77,7 +77,7 @@ listFile.onreadystatechange = function() {
             newArticle.innerHTML = "<a href=\"/articles/" + titleList[i] + ".html\">" + titleList[i] + "</a>";
             articleElement.appendChild(newArticle);
         }
-        if(tag !== "All") document.title = "「" + tag + "」" + "- tder の Blogs (*/ω＼*)";
+        if(tag !== "All") document.title = "「" + tag + "」" + "- tder の blogs (*/ω＼*)";
 		changeSize();
 		setTitle();
     }
