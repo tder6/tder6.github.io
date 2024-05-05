@@ -50,6 +50,7 @@ window.onload = function() {
 	setScroll();
 	setCopyRight();
 	setTitle();
+	setImage();
 }
 window.onresize = function() {
     changeSize();
@@ -114,6 +115,7 @@ setPointer = function() {
 var lastClientX = 0, lastClientY = 0;
 function updatePointerPosition(e) {
 	var pointer = document.getElementsByClassName("pointer")[0];
+	if(typeof(pointer) === "undefined") setPointer();
 	var x = e.clientX, y = e.clientY + window.scrollY;
 	if(typeof(e.clientX) === "undefined") x = lastClientX;
 	else lastClientX = e.clientX;
@@ -126,11 +128,13 @@ document.addEventListener('mousemove', updatePointerPosition);
 document.addEventListener('scroll', updatePointerPosition);
 document.body.style.cursor = "none";
 document.body.addEventListener('mouseout', function(event) {
-    if(!event.relatedTarget || (event.relatedTarget === null)) 
-		for(var i in document.body.getElementsByClassName("pointer")) {
-			if(!(i >= 0 && i < document.body.getElementsByClassName("pointer").length)) continue;
-			document.body.removeChild(document.body.getElementsByClassName("pointer")[i]);
+	var pointerList = document.getElementsByClassName("pointer");
+    if(!event.relatedTarget || (event.relatedTarget === null)) {
+		for(var i in pointerList) {
+			if(!(i >= 0 && i < pointerList.length)) continue;
+			document.body.removeChild(pointerList[i]);
 		}
+	}
 });
 document.body.addEventListener('mouseover', function(event) {
     if(!event.relatedTarget || (event.relatedTarget === null)) setPointer();

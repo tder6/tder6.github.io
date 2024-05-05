@@ -1,3 +1,21 @@
+setImage = function() {
+	var imgList = document.getElementById("markdown").getElementsByTagName("img");
+	for(var i in imgList) {
+		if(!(i >= 0 && i < imgList.length)) continue;
+		if(imgList[i].width > (document.body.scrollWidth - 360)) imgList[i].width = (document.body.scrollWidth - 360);
+	}
+	var blockList = document.getElementsByTagName("blockquote");
+	for(var i in blockList) {
+		if(!(i >= 0 && i < blockList.length)) continue;
+		var blockImgList = blockList[i].getElementsByTagName("img");
+		for(var j in blockImgList) {
+			if(!(j >= 0 && j < blockImgList.length)) continue;
+			if(blockImgList[j].width > (document.body.scrollWidth - 390)) blockImgList[j].width = (document.body.scrollWidth - 390);
+			blockImgList[j].style.marginTop = blockImgList[j].style.marginBottom = "18px";
+		}
+	}
+	changeSize();
+}
 var markdownFile = new XMLHttpRequest(), markdownContext;
 markdownFile.open("GET", "/articles/" + title + ".md", true);
 markdownFile.onreadystatechange = function() {

@@ -15,7 +15,7 @@
 
 题目给定 $n$ 点 $n$ 边的无向图，即一棵基环树，我们将他画成如下图所示的「仙人掌」形状：
 
-![](https://cdn.luogu.com.cn/upload/image_hosting/rud14d0m.png?x-oss-process=image/resize,l_800)
+![](https://cdn.luogu.com.cn/upload/image_hosting/rud14d0m.png)
 
 一棵基环树的主体由一个环组成，且这个环上的每个点均有一棵子树。
 
@@ -23,7 +23,7 @@
 
 接下来考虑不在同一子树上的两个点的最短距离，如下图所示是从第 $1$ 个点到第 $2$ 个点的一条最短路径。
 
-![](https://cdn.luogu.com.cn/upload/image_hosting/rm0bn8qc.png?x-oss-process=image/resize,l_800)
+![](https://cdn.luogu.com.cn/upload/image_hosting/rm0bn8qc.png)
 
 总结起来，第 $i$ 个点到第 $j$ 个点的最短路径为 $i\rightsquigarrow\text{root}(i)\rightsquigarrow\text{root}(j)\rightsquigarrow j$，其长度为 $\text{deep}(i)+\text{dis}(\text{root}(i),\text{root}(j))+\text{deep}(j)$。
 
