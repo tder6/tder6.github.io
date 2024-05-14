@@ -25,3 +25,4 @@ CF1628D Game on Sum 题解
 CF1428E Carrots for Rabbits 题解
 P10405 「SMOI-R1」Queue 题解
 CF863F Almost Permutation 题解
+CF1971A to CF1971G 场记
