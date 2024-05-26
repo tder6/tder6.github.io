@@ -87,4 +87,3 @@ setCopyMarkdown = function() {
     document.body.appendChild(copyMarkdownElement);
 }
 setCopyMarkdown();
-setImage();
