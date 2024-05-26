@@ -66,6 +66,7 @@ markdownFile.onreadystatechange = function() {
         document.getElementById("date").innerHTML = "&nbsp;" + date; 
         changeSize();
 		setTitle();
+		setImage();
     }
 };
 markdownFile.send();
@@ -86,3 +87,4 @@ setCopyMarkdown = function() {
     document.body.appendChild(copyMarkdownElement);
 }
 setCopyMarkdown();
+setImage();

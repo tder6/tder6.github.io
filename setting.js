@@ -51,8 +51,11 @@ window.onload = function() {
 	setCopyRight();
 	setTitle();
 	setImage();
+	setImage();
+	setImage();
 }
 window.onresize = function() {
+	setImage();
     changeSize();
 }
 setScroll = function() {
