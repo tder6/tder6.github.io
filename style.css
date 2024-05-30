@@ -213,7 +213,7 @@ blockquote {
 blockquote p {
 	margin: 0; 
 }
-.object strong {
+.object strong, .object h1, .object h2, .object h3, .object h4, .object h5, .object h6 {
 	font-family: Georgia, 'Times New Roman', Times, "黑体";
 	font-weight: normal;
 }
