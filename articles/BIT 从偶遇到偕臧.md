@@ -63,7 +63,7 @@ namespace Solve {
 
 ---
 
-## 裸聊 BIT
+## 邂逅 BIT
 
 ### 前置
 
@@ -235,7 +235,7 @@ signed main() {
 
 ---
 
-## 约会 BIT
+## 情窦 BIT
 
 引入中的题目可以归纳为「单点修改，区间查询」，接下来来看一些别的题目。
 
@@ -305,4 +305,79 @@ signed main() {
 
 ### 问题 2
 
-咕着。
+P5057 [CQOI2006] 简单题
+
+区间异或，单点查询。
+
+### 问题 3
+
+逆序对（P1774 最接近神的人、P1908 逆序对）。
+
+### 问题 4
+
+P5200 [USACO19JAN] Sleepy Cow Sorting G
+
+分成两部分。后半部分单调上升。考虑前半部分的第 $1$ 个数，应将他后移 $(k-1)+sum(p_1)$，其在后缀中是第 $sum(p_1)+1$ 小的（应在第 $(k-1)+sum(p_1)+1$ 个）。
+
+```
+No. 1 2 3 4   5 6
+	5 4 1 6 | 2 3
+   	  4 1 6 | 2 3 5 
+	p_1 --> p_{(--k)+sum(p_1)}
+```
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+#define endl '\n'
+const int N = 1e6 + 5;
+namespace BIT {
+	int n, t[N];
+	int lowbit(int x) {
+		return (-x) & x;
+	}
+	void add(int x, int k) {
+		for(int i = x; i <= n; i += lowbit(i)) t[i] += k;
+	}
+	int sum(int x) {
+		int r = 0;
+		for(int i = x; i; i -= lowbit(i)) r += t[i];
+		return r;
+	}
+	int sum(int l, int r) {
+		return sum(r) - sum(l - 1);
+	}
+	void init(int m, int b[]) {
+		n = m;
+		for(int i = 1; i <= n; i++) add(i, b[i]);
+	}
+};
+using namespace BIT;
+int p[N], k;
+signed main() {
+	cin>>n;
+	for(int i = 1; i <= n; i++) cin>>p[i];
+	k = n;
+	while(p[k - 1] < p[k] && k > 1) k--; 
+	k--;
+	cout<<k<<endl;
+	for(int i = k + 1; i <= n; i++) add(p[i], 1);
+	for(int i = 1; i <= k; i++) {
+		cout<<k - i + sum(p[i])<<" ";
+		add(p[i], 1);
+	}
+}
+```
+
+---
+
+## 偕臧 BIT
+
+动态第 $k$ 小值。
+
+从而实现平衡树。
+
+权值树状数组。
+
+例题：约瑟夫问题，平衡树。
