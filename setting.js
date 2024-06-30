@@ -32,7 +32,9 @@ menuFile.onreadystatechange = function() {
 }
 menuFile.send();
 changeSize = function() {
-    document.body.style.backgroundSize = Math.max(document.body.scrollWidth, 1500).toString() + "px"; 
+	var finalSize = document.body.scrollWidth;
+	while(finalSize * (3072 / 6046) <= window.innerHeight) finalSize++;
+	document.body.style.backgroundSize = finalSize.toString() + "px"; 
 	document.body.getElementsByClassName("article")[0].style.width = (document.body.scrollWidth - 360).toString() + "px";
     var titleHeight = window.getComputedStyle(document.getElementsByClassName("text")[1]).height, textHeight;
     if(document.getElementById("markdown") != undefined) textHeight = window.getComputedStyle(document.getElementById("markdown")).height;
@@ -53,6 +55,7 @@ window.onload = function() {
 	setImage();
 	setImage();
 	setImage();
+	changeSize();
 }
 window.onresize = function() {
 	setImage();
@@ -77,17 +80,17 @@ setCopyRight = function() {
 	var copyRightHtml = `
 		<div class="inner">©Since 2024 By&nbsp;<a class="link" href="https://github.com/tder6">tder</a></div>
 		<div class="icon">
-			<a href="https://TBC." title="Based on Bloger."><img src="https://img.shields.io/badge/Frame-Bloger-c63a2a?logo=Framer" alt=""></a>
+			<a href="https://TBC." title="Based on Bloger."><img src="/images/Frame-Bloger-c63a2a.svg" alt=""></a>
 			&nbsp;
-			<a href="https://marked.js.org/" title="Markdown powered by Marked.js."><img src="https://img.shields.io/badge/Markdown-Marked-c0392b?logo=Markdown" alt=""></a>
+			<a href="https://marked.js.org/" title="Markdown powered by Marked.js."><img src="/images/Markdown-Marked-c0392b.svg" alt=""></a>
 			&nbsp;
-			<a href="https://www.mathjax.org/" title="LaTeX powered by MathJax."><img src="https://img.shields.io/badge/LaTeX-MathJax-b52e31?logo=Latex" alt=""></a>
+			<a href="https://www.mathjax.org/" title="LaTeX powered by MathJax."><img src="/images/LaTeX-MathJax-b52e31.svg" alt=""></a>
 			&nbsp;
-			<a href="https://highlightjs.org/" title="Code highlighting powered by Highlight.js."><img src="https://img.shields.io/badge/Code-Highlight-96281b?logo=Codecademy" alt=""></a>
+			<a href="https://highlightjs.org/" title="Code highlighting powered by Highlight.js."><img src="/images/Code-Highlight-96281b.svg" alt=""></a>
 			&nbsp;
-			<a href="https://github.com/tder6/tder6.github.io/" title="Source code hosted on Github."><img src="https://img.shields.io/badge/Source-Github-822721?logo=Github" alt=""></a>
+			<a href="https://github.com/tder6/tder6.github.io/" title="Source code hosted on Github."><img src="/images/Source-Github-822721.svg" alt=""></a>
 			&nbsp;
-			<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Using BY-NC-SA 4.0 license."><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-630820?style=flat&logo=Claris" alt=""></a>
+			<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Using BY-NC-SA 4.0 license."><img src="/images/Copyright-BY--NC--SA 4.svg" alt=""></a>
 		</div>
 	`
 	var copyRightElement = document.createElement("div");
