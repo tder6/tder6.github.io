@@ -30,5 +30,9 @@ CF863F Almost Permutation 题解
 CF1971A to CF1971G 场记
 ABC354A to ABC354E 场记
 ABC355A to ABC355E 场记
-BIT 从偶遇到偕臧
 ABC356A to ABC356E 场记
+P10511 方差 题解
+P10512 序列合并 题解
+P10514 考试 题解
+CF665F Four Divisors 题解
+CF607C Marbles 题解

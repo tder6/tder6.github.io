@@ -25,3 +25,8 @@ CF1628D Game on Sum 题解
 CF1428E Carrots for Rabbits 题解
 P10405 「SMOI-R1」Queue 题解
 CF863F Almost Permutation 题解
+P10511 方差 题解
+P10512 序列合并 题解
+P10514 考试 题解
+CF665F Four Divisors 题解
+CF607C Marbles 题解
